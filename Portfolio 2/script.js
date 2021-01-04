@@ -18,3 +18,12 @@ navLinks.forEach(link => {
     document.body.classList.remove('nav-open');
   })
 })
+
+//typeing animation script
+
+var typed = new Typed(".typing", {
+  strings:["Full-stack", "Developer" ],
+  typeSpeed: 100,
+  backSpeed: 60,
+  loop: true
+});
