@@ -457,7 +457,7 @@ section .title::after {
 
 .skills {
   background-color: #303030;
-  background-image: url(images/education-bg.jpg);
+  background-image: url(images/lang-bg.jpg);
   background-size: cover;
   background-blend-mode: multiply;
   color: var(--clr-light);
@@ -483,6 +483,10 @@ section .title::after {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 3em;
+}
+
+.skills .skills-content p {
+  color: var(--clr-accent);
 }
 
 .skills .skills-content .skill {
