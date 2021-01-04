@@ -648,7 +648,10 @@ footer span a:hover {
 }
 
 @media (max-width: 800px) {
+  h2 { margin-top:8%; }
+
   .max-width {
+    max-width: 800px;
     padding: 0 50px;
   }
 
@@ -672,9 +675,6 @@ footer span a:hover {
     text-transform: uppercase;
     letter-spacing: 2px;
     border: 1px solid var(--clr-accent);
-  }
-  .max-width {
-    max-width: 800px;
   }
   .about .about-content .column{
     width: 100%;
@@ -700,10 +700,11 @@ footer span a:hover {
     width: 100%;
     margin-bottom: 35px;
   }
-
 }
 
 @media (max-width: 690px) {
+  h2 { margin-top:15%; }
+
   .max-width {
     padding: 0 23px;
   }
@@ -742,6 +743,8 @@ footer span a:hover {
 }
 
 @media (max-width: 350px) {
+  h2 { margin-top:20%; }
+
 
   .home .home-content .text-2{
     font-size: 40px;
