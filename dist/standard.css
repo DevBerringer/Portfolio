@@ -697,6 +697,42 @@ footer {
     .skill {
         max-width: 500px;
     }
+    .slider {
+        overflow: visible;
+        height: auto;
+        pointer-events: none;
+    }
+
+    .slider-inner {
+        max-width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        grid-gap: 10px;
+        justify-content: center;
+    }
+
+    .slide-img {
+        min-height: 100px;
+        min-width: 100px;
+        background: #222;
+        color: var(--clr-accent);
+        box-shadow: 4px 4px 12px 3px #000;
+        border-radius: 6px;
+        padding: .5rem;
+    }
+
+        .slide-img .text {
+            padding: .25rem;
+            font-size: 15px;
+        }
+
+        .slide-img i {
+            padding: .25rem;
+            color: var(--clr-accent);
+            font-size: 1.5rem;
+            pointer-events: none;
+            cursor: pointer;
+        }
 }
 
 @media (max-width: 800px) {
@@ -754,41 +790,7 @@ footer {
         margin: 0 auto 10px;
     }
 
-    .slider {
-        overflow: visible;
-        height: auto;
-        pointer-events: none;
-    }
-    .slider-inner {
-        max-width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        grid-gap: 10px;
-        justify-content: center;
-    }
-
-    .slide-img {
-        min-height: 100px;
-        min-width: 100px;
-        background: #222;
-        color: var(--clr-accent);
-        box-shadow: 4px 4px 12px 3px #000;
-        border-radius: 6px;
-        padding: .5rem;
-    }
-
-    .slide-img .text {
-        padding: .25rem;
-        font-size: 15px;
-    }
     
-    .slide-img i {
-        padding: .25rem;
-        color: var(--clr-accent);
-        font-size: 1.5rem;
-        pointer-events: none;
-        cursor: pointer;
-    }
 
     .projects .projects-content .cards {
         display: block;
