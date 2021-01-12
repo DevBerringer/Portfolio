@@ -465,7 +465,7 @@ section {
     background: #222;
     color: var(--clr-accent);
     height: 80%;
-    box-shadow: -4px -4px -12px -3px #000;
+    box-shadow: 4px 4px 12px 3px #000;
     border-radius: 10px;
     text-align: center;
     padding: 2rem;
@@ -754,9 +754,52 @@ footer {
         margin: 0 auto 10px;
     }
 
+    .slider {
+        overflow: visible;
+        height: auto;
+        pointer-events: none;
+    }
+    .slider-inner {
+        max-width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        grid-gap: 10px;
+        justify-content: center;
+    }
+
+    .slide-img {
+        min-height: 100px;
+        min-width: 100px;
+        background: #222;
+        color: var(--clr-accent);
+        box-shadow: 4px 4px 12px 3px #000;
+        border-radius: 6px;
+        padding: .5rem;
+    }
+
+    .slide-img .text {
+        padding: .25rem;
+        font-size: 15px;
+    }
+    
+    .slide-img i {
+        padding: .25rem;
+        color: var(--clr-accent);
+        font-size: 1.5rem;
+        pointer-events: none;
+        cursor: pointer;
+    }
+
+    .projects .projects-content .cards {
+        display: block;
+    }
+
     .projects .projects-content .card {
-        width: calc(50% - 10px);
+        width: 100%;
         margin-bottom: 20px;
+    }
+    .projects .projects-content .card:hover ~ .card {
+        transform: translateX(0rem);
     }
 
     .contact .contact-content .column {
@@ -790,6 +833,29 @@ footer {
 
     .skills .skills-content .skill {
         margin-bottom: 1em;
+    }
+
+    .slide-img {
+        min-height: 75px;
+        min-width: 75px;
+        background: #222;
+        color: var(--clr-accent);
+        box-shadow: 4px 4px 12px 3px #000;
+        border-radius: 6px;
+        padding: .5rem;
+    }
+
+    .slide-img .text {
+        padding: .25rem;
+        font-size: 10px;
+    }
+
+    .slide-img i {
+        padding: .25rem;
+        color: var(--clr-accent);
+        font-size: 1rem;
+        pointer-events: none;
+        cursor: pointer;
     }
 }
 
