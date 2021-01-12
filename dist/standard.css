@@ -631,6 +631,7 @@ section {
 }
 
 .contact .right form .button {
+    margin-top: 50px;
     height: 47px;
     width: 170px;
 }
