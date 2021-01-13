@@ -57,7 +57,6 @@
 
 html {
     scroll-behavior: smooth;
-
 }
 
 h2 {
@@ -67,7 +66,7 @@ h2 {
 body {
     font-family: var(--fs-primary);
     font-size: var(--fs-body);
-    overflow: scroll; /* Show scrollbars */
+    overflow-x: hidden;
 }
 
 /* reoccuring content Styling*/
