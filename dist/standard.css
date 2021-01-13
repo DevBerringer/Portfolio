@@ -439,8 +439,7 @@ section {
 }
 
 .skills .title::after {
-    content: 'Languages';
-    background: black;
+    content: '';
 }
 
 .slider {
