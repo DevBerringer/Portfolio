@@ -74,11 +74,10 @@ function checkboundary() {
     }
 }
 
-
 //typeing animation script
 
 var typed = new Typed(".typing", {
-  strings:["Full-stack", "Developer" ],
+  strings:["Front-end, Back-end", "Full-stack", "Developer" ],
   typeSpeed: 100,
   backSpeed: 60,
   loop: true
