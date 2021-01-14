@@ -219,6 +219,7 @@ section {
 }
 
 .nav__link {
+    padding: 50px 200px 50px 200px;
     color: white;
     font-weight: var(--fw-bold);
     font-size: var(--fs-h3);
