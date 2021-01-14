@@ -870,7 +870,7 @@ footer {
             font-size: 26px;
         }
         .reCaptcha {
-            max-width: 200px;
+            overflow:hidden;
         }
     }
 
