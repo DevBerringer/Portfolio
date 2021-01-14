@@ -869,6 +869,9 @@ footer {
         .home .home-content .text-3 {
             font-size: 26px;
         }
+        .reCaptcha {
+            max-width: 200px;
+        }
     }
 
     @media (max-width: 350px) {
