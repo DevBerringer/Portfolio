@@ -890,6 +890,6 @@ footer {
 
         .contact .title::after {
             content: "Get in touch";
-            font-size: 18px;
+            font-size: 13px;
         }
     }
