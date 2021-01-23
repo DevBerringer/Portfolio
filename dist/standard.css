@@ -656,16 +656,8 @@ footer {
     background: var(--clr-dark);
     padding: 20px 23px;
     color: var(--clr-accent);
+    font-size: 15px;
 }
-
-    footer span a {
-        color: var(--clr-accent);
-        text-decoration: none;
-    }
-
-    footer span a:hover {
-        text-decoration: underline;
-    }
 
 /* Responsive media qeary start*/
 @media (max-width: 1300px) {
