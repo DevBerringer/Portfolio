@@ -542,7 +542,7 @@ section {
 
 /* contact styles*/
 .contact .title::after {
-    content: "Get in touch";
+    content: "";
 }
 
 .contact .contact-content .column {
