@@ -6,7 +6,6 @@
 }
 
 /* Custom Properties*/
-
 :root {
     --ff-primary: font-family 'Lora', serif;
     --ff-secondary: font-family 'Montserrat', sans-serif;
@@ -61,6 +60,7 @@ html {
 
 h2 {
     margin-top: 5%;
+    cursor: context-menu;
 }
 
 body {
@@ -307,7 +307,9 @@ section {
 .home .max-width {
     margin: auto 0 auto 40px;
 }
-
+.home-content {
+    cursor: context-menu;
+}
 .home .home-content .text-1 {
     font-size: 27px;
 }
