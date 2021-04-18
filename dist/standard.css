@@ -174,7 +174,7 @@ section .title::after {
 .navbar .menu li {
     list-style: none;
     display: inline-block;
-    cursor:context-menu;
+    cursor: context-menu;
 }
 
 .navbar .menu li a {
