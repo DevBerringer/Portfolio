@@ -170,11 +170,12 @@ section .title::after {
 .navbar .logo a span {
     color: var(--clr-accent);
 }
-
+.navbar .menu {
+    cursor: context-menu;
+}
 .navbar .menu li {
     list-style: none;
     display: inline-block;
-    cursor: context-menu;
 }
 
 .navbar .menu li a {
@@ -183,6 +184,7 @@ section .title::after {
     font-weight: 500;
     margin-left: 25px;
     transition: color 0.3s ease;
+    cursor: pointer;
 }
 
 .navbar .menu li a:hover {
