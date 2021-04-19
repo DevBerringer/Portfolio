@@ -113,6 +113,9 @@ section .title::after {
     margin: auto;
 }
 
+a {
+    outline: none;
+}
 /* @navbar Styles*/
 .logo-nav {
     width: 30px;
@@ -182,10 +185,11 @@ section .title::after {
     color: var(--clr-accent);
     font-size: 14px;
     font-weight: 500;
-    margin-left: 25px;
+    padding: 10px 10px 10px 10px;
     transition: color 0.3s ease;
     cursor: pointer;
 }
+
 
 .navbar .menu li a:hover {
     color: var(--clr-light);
@@ -224,7 +228,6 @@ section .title::after {
 .nav-open .nav__list {
     display: flex;
 }
-
 .nav__link {
     padding: 50px 200px 50px 200px;
     color: white;
@@ -862,19 +865,6 @@ footer {
         font-size: 1rem;
         pointer-events: none;
         cursor: pointer;
-    }
-}
-@media (max-width: 580px) {
-
-    .home .home-content .text-2 {
-        font-size: 50px;
-    }
-
-    .home .home-content .text-3 {
-        font-size: 26px;
-    }
-    .reCaptcha {
-        overflow:hidden;
     }
 }
 
