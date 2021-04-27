@@ -562,10 +562,7 @@ a {
     grid-column-start: 2;
     grid-column-end: 4;
 }
-.item3 {
-    grid-column-start: 2;
-    grid-column-end: 4;
-}
+
 
 #overlay {
     position: fixed;
@@ -826,6 +823,10 @@ footer {
 }
 
 @media (max-width: 800px) {
+    .modal-body {
+        font-size: 11px;
+        padding: 8px 12px;
+    }
 
     h2 {
         margin-top: 8%;
