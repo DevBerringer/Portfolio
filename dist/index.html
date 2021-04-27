@@ -138,31 +138,98 @@
                 </div>
             </div>
         </section>
-
+        <div class="modal" id="QTmodal">
+            <div class="modal-header">
+                <div class="title">QuickTicket</div>
+                <button data-close-button class="close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="item item1">
+                    <p>Development Status:</p>
+                    <p>Github:</p>
+                    <p>Stack:</p>
+                    <p>Project Website:</p>
+                    <p>Project Description:</p>
+                </div>
+                <div class="item item2">
+                    <p>Early development, currently working on Front end </p>
+                    <p><a href="https://github.com/DevBerringer/QuickTicket" target="_blank">Click Here</Click></a></p>
+                    <p>Vue.js, .NET, PostgreSQL</p>
+                    <p>---------------</p>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde voluptates repellendus saepe autem illo facere rem dolorem recusandae suscipit? Tempora consequuntur laborum exercitationem officiis porro neque debitis earum autem nisi!</p>
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="PUmodal">
+            <div class="modal-header">
+            <div class="title">Phones Unlimited</div>
+            <button data-close-button class="close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="item item1">
+                    <p>Development Status:</p>
+                    <p>Github:</p>
+                    <p>Stack:</p>
+                    <p>Project Website:</p>
+                    <p>Project Description:</p>
+                </div>
+                <div class="item item2">
+                    <p>Early development, currently working on Front end </p>
+                    <p><a href="https://github.com/DevBerringer/QuickTicket" target="_blank">Click Here</a></p>
+                    <p>Angular, Bootstrap, Firebase</p>
+                    <p>---------------</p>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde voluptates repellendus saepe autem illo facere rem dolorem recusandae suscipit? Tempora consequuntur laborum exercitationem officiis porro neque debitis earum autem nisi!</p>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="modal" id="CHmodal">
+            <div class="modal-header">
+            <div class="title">ChessHero</div>
+            <button data-close-button class="close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="item item1">
+                    <p>Development Status:</p>
+                    <p>Github:</p>
+                    <p>Stack:</p>
+                    <p>Project Website:</p>
+                    <p>Project Description:</p>
+                </div>
+                <div class="item item2">
+                    <p>Early development, currently working on Front end </p>
+                    <p><a href="https://github.com/DevBerringer/QuickTicket" target="_blank">Click Here</a></p>
+                    <p>---------------</p>
+                    <p>---------------</p>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde voluptates repellendus saepe autem illo facere rem dolorem recusandae suscipit? Tempora consequuntur laborum exercitationem officiis porro neque debitis earum autem nisi!</p>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div id="overlay"></div>
         <!-- @Projects content-->
         <section class="projects" id="projects">
             <div class="max-width">
                 <h2 class="title">Projects</h2>
                 <div class="projects-content">
                     <div class="cards">
-                        <div class="card">
+                        <div data-modal-target="#PUmodal" class="card">
+                            <div class="box">
+                                <i class="fas fa-mobile"></i>                                
+                                <div class="text">Phones Unlimited</div>
+                            </div>
+                        </div>
+                        <div data-modal-target="#QTmodal" class="card">
                             <div class="box">
                                 <i class="fas fa-th-list"></i>
                                 <div class="text">QuickTicket</div>
-                                <div class="text">In Development</div>
                             </div>
                         </div>
-                        <div class="card">
-                            <div class="box">
-                                <i class="fas fa-mobile"></i>                                <div class="text">Phones Unlimited</div>
-                                <div class="text">In Development</div>
-                            </div>
-                        </div>
-                        <div class="card">
+
+                        <div data-modal-target="#CHmodal" class="card">
                             <div class="box">
                                 <i class="fas fa-chess-board"></i>
                                 <div class="text">ChessHero</div>
-                                <div class="text">In Development</div>
                             </div>
                         </div>
                     </div>
@@ -236,6 +303,7 @@
         </footer>
     </div>
     <script src="script.js"></script>
+    </script>
 
 </body>
 </html>
