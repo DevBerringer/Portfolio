@@ -542,7 +542,7 @@ a {
     grid-template-columns: auto auto auto;
 }
 .modal-body a {
-    color:rgb(240,534,214);
+    color: blue;
 }
 .item1 {
     color: var(--clr-accent);
