@@ -1,55 +1,39 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-US">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blake Berringer Portfolio Website</title>
-    <link rel="icon" href="images/favicon.png" type="image/png"/>
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap">
-    <link rel="stylesheet" type"css" href="standard.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <meta name="description" content="Blake Berringer – full-stack engineer building pragmatic, user-focused web applications.">
+    <title>Blake Berringer | Portfolio</title>
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5JtzgvbUZAP5eF2v5d2ttO94Wc58uDFafT1zB4Trw9S63tyVr2rGHrVg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,900&display=swap">
+    <link rel="stylesheet" type="text/css" href="standard.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
 </head>
 <body>
-
-    <!-- @topNavigation content -->
-    <nav class="navbar">
-        <div class="max-width">
-            <div class="logo">
-                <a href="#home"><input class="logo-nav" type="image" src="images/logo-nav.jpg"></a>
-                <a href="#home">Portfo<span>lio</span></a>
-            </div>
-            <ul class="menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="menu-btn">
-                <button class="nav-toggle" aria-lable="toggle navigation">
-                    <span class="hamburger"></span>
+    <header>
+        <nav class="navbar" aria-label="Primary">
+            <div class="max-width">
+                <div class="logo">
+                    <a href="#home"><img class="logo-nav" src="images/logo-nav.jpg" alt="Blake Berringer logo"></a>
+                    <a href="#home">Portfo<span>lio</span></a>
+                </div>
+                <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+                    <span class="hamburger" aria-hidden="true"></span>
                 </button>
-                <nav class="nav">
-                    <ul class="nav__list">
-                        <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
-                        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
-                        <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
-                        <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
-                        <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
-                    </ul>
-                </nav>
+                <ul class="menu" data-nav-menu>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                </ul>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <!-- @Home content -->
-    <div class="page-content">
+    <main class="page-content">
         <section class="home" id="home">
             <div class="max-width">
                 <div class="home-content">
@@ -59,254 +43,171 @@
                 </div>
                 <ul class="social-list">
                     <li class="social-list__item">
-                        <a class="socal-list__link" href="https://github.com/DevBerringer" target="_blank">
-                            <i class="fab fa-github-square"></i>
+                        <a class="social-list__link" href="https://github.com/DevBerringer" target="_blank" rel="noopener" aria-label="GitHub">
+                            <i class="fab fa-github-square" aria-hidden="true"></i>
                         </a>
                     </li>
                     <li class="social-list__item">
-                        <a class="socal-list__link" href="https://www.linkedin.com/in/blake-berringer-35126a105/" target="_blank">
-                            <i class="fab fa-linkedin"></i>
+                        <a class="social-list__link" href="https://www.linkedin.com/in/blake-berringer-35126a105/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
                         </a>
                     </li>
                 </ul>
             </div>
         </section>
 
-        <!-- @About content-->
-        <section class="about" id="about">
+        <section class="about" id="about" aria-labelledby="about-title">
             <div class="max-width">
-                <h2 class="title">About Blake Berringer</h2>
-                <div class="about-content">
-                    <div class="column left">
-                        <img src="images/logo.jpg" alt="logo">
+                <h2 class="title" id="about-title">About</h2>
+                <div class="about-grid">
+                    <div class="about-image">
+                        <img src="images/logo.jpg" alt="Blake Berringer avatar">
                     </div>
-                    <div class="colum right">
-                        <div class="text">I am a <span>Developer</span> who enjoys both 
-                        <span>front-end</span> and <span>back-end</span> development.</div>
-                        <p>
-                            I am a graduate from the University of Iowa with a Bachelor's Degree in Computer Science.  I am seeking a challenging position for my professional
-                            career, looking for an environment where I can learn and grow my knowledge
-                            as a developer. Being an integral part of a team that contributes to the success
-                            of the company is important to me.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- @Skills content-->
-        <section class="skills" id="skills">
-            <div class="max-width">
-                <h2 class="title">Skills</h2>
-                <div class="slider">
-                    <div class="slider-inner">
-                        <div class="slide-img">
-                            <i class="fab fa-python"></i>
-                            <div class="text">Python</div>
-                        </div>
-                        <div class="slide-img">
-                            <i class="fab fa-java"></i>
-                            <div class="text">Java</div>
-                        </div>
-                        <div class="slide-img">
-                            <i class="fas fa-stream"></i>
-                            <div class="text">
-                                <p>C++<br>C</p>
-                            </div>
-                        </div>
-                        <div class="slide-img">
-                            <i class="fab fa-microsoft"></i>
-                            <div class="text">C#</div>
-                        </div>
-                        <div class="slide-img">
-                            <i class="fas fa-database"></i>
-                            <div class="text">mySQL</div>
-                        </div>
-                        <div class="slide-img">
-                            <i class="fab fa-html5"></i>
-                            <i class="fab fa-css3-alt"></i>
-                            <div class="text">
-                                <p>HTML<br>CSS</p>
-                            </div>
-                        </div>
-                        <div class="slide-img">
-                            <i class="fab fa-js-square"></i>
-                            <div class="text">JavaScript</div>
+                    <div class="about-copy">
+                        <p>I’m a University of Iowa Computer Science graduate who thrives on pairing clean architecture with thoughtful UX. I’ve delivered full-stack web apps for product discovery, real-time inventory, and internal ticketing—always anchoring decisions in measurable outcomes.</p>
+                        <ul class="about-highlights">
+                            <li><span>Product-minded:</span> Collaborate with designers and stakeholders to prioritize features that move metrics.</li>
+                            <li><span>Full-stack:</span> Build responsive front-ends with React, Vue, and Angular backed by .NET and PostgreSQL services.</li>
+                            <li><span>Continuous learning:</span> Experiment with modern tooling (Vercel, Supabase, Prisma) to improve delivery speed and reliability.</li>
+                        </ul>
+                        <div class="cta-buttons">
+                            <a class="cta-button" href="https://www.linkedin.com/in/blake-berringer-35126a105/" target="_blank" rel="noopener">
+                                <i class="fab fa-linkedin" aria-hidden="true"></i>
+                                <span>Connect on LinkedIn</span>
+                            </a>
+                            <a class="cta-button" href="https://github.com/DevBerringer" target="_blank" rel="noopener">
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                                <span>View GitHub</span>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <div class="modal" id="MBmodal">
-            <div class="modal-header">
-                <div class="title">Entertainment Browser</div>
-                <button data-close-button class="close-button">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="item item1">
-                    <p>Development Status:</p>
-                    <p>Github:</p>
-                    <p>Stack:</p>
-                    <p>Project Website:</p>
-                    <p>Project Description:</p>
-                </div>
-                <div class="item item2">
-                    <p>Late development</p>
-                    <p><a href="https://github.com/DevBerringer/Movie-Browser" target="_blank">Click here</Click></a></p>
-                    <p>React, TheMovieDb API, Material-UI </p>
-                    <p><a href="https://devberringer-movie-browser.netlify.app/" target="_blank">Click here</a></p>
-                    <p> An entertainment browser built with ReactJS that pulls from The Movie DB API. Has options for trending movies and shows, all movies, all TV shows, and searching the database. Each movie or show can be selected to view ratings, descriptions, actors and more.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="modal" id="PUmodal">
-            <div class="modal-header">
-            <div class="title">QuickTicket</div>
-            <button data-close-button class="close-button">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="item item1">
-                    <p>Development Status:</p>
-                    <p>Github:</p>
-                    <p>Stack:</p>
-                    <p>Project Website:</p>
-                    <p>Project Description:</p>
-                </div>
-                <div class="item item2">
-                    <p>Early development</p>
-                    <p><a href="https://github.com/DevBerringer/QuickTicket" target="_blank">Click here</a></p>
-                    <p>Angular, .Net, PostgreSQL</p>
-                    <p>---------------</p>
-                    <p>Software Development and IT ticketing System to track tickets submitted and to organize workflow.
 
-                    </p>
-                </div>
-            </div>
-        </div>
-        </div>
-        <div class="modal" id="CHmodal">
-            <div class="modal-header">
-            <div class="title">Nuts Ect.</div>
-            <button data-close-button class="close-button">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="item item1">
-                    <p>Development Status:</p>
-                    <p>Github:</p>
-                    <p>Stack:</p>
-                    <p>Project Website:</p>
-                    <p>Project Description:</p>
-                </div>
-                <div class="item item2">
-                    <p>Mid development</p>
-                    <p><a href="https://github.com/DevBerringer/Nuts-Bolts" target="_blank">Click here</a></p>
-                    <p>vue.js, .NET, PostgreSQL</p>
-                    <p>---------------</p>
-                    <p>Dashboard application with the ability to track and manage inventory and create customer invoices for a fictitious company called Nuts Ect. Inventory is updated in real time as invoices and shipments come in.
-                    </p>
-                </div>
-            </div>
-        </div>
-        </div>
-        <div id="overlay"></div>
-        <!-- @Projects content-->
-        <section class="projects" id="projects">
+        <section class="skills" id="skills" aria-labelledby="skills-title">
             <div class="max-width">
-                <h2 class="title">Projects</h2>
+                <h2 class="title" id="skills-title">Skills</h2>
+                <p class="skills-intro">The toolset I rely on to ship performant, maintainable products.</p>
+                <div class="skills-grid" role="list">
+                    <article class="skill-card" role="listitem">
+                        <h3>Languages</h3>
+                        <ul>
+                            <li>Java</li>
+                            <li>C#</li>
+                            <li>JavaScript / TypeScript</li>
+                            <li>SQL</li>
+                        </ul>
+                    </article>
+                    <article class="skill-card" role="listitem">
+                        <h3>Frameworks</h3>
+                        <ul>
+                            <li>Spring Boot &amp; Quarkus</li>
+                            <li>React</li>
+                            <li>Angular</li>
+                            <li>ASP.NET Core</li>
+                        </ul>
+                    </article>
+                    <article class="skill-card" role="listitem">
+                        <h3>Cloud &amp; DevOps</h3>
+                        <ul>
+                            <li>Docker &amp; Kubernetes</li>
+                            <li>Pivotal Cloud Foundry</li>
+                            <li>CI/CD (GitHub Actions/Azure Pipelines)</li>
+                            <li>AWS Lambda</li>
+                        </ul>
+                    </article>
+                    <article class="skill-card" role="listitem">
+                        <h3>Collaboration</h3>
+                        <ul>
+                            <li>Agile delivery</li>
+                            <li>System design</li>
+                            <li>Analytics</li>
+                            <li>Technical mentorship</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects" id="projects" aria-labelledby="projects-title">
+            <div class="max-width">
+                <h2 class="title" id="projects-title">Projects and Experience</h2>
+                <p class="projects-intro">Select a project to explore the stack, status, and what I contributed.</p>
                 <div class="projects-content">
-                    <h4 class="information">Select for more information</h4>
-                    <div class="cards">
-                        <div data-modal-target="#MBmodal" class="card">
-                            <div class="box">
-                                <i class="fas fa-film"></i>
-                                <div class="text">Entertainment Browser</div>
-                            </div>
-                        </div>
-                        <div data-modal-target="#CHmodal" class="card">
-                            <div class="box">
-                                <i class="fab fa-nutritionix"></i>
-                                <div class="text">Nuts Etc.</div>
-                            </div>
-                        </div>
-                        <div data-modal-target="#PUmodal" class="card">
-                            <div class="box">
-                                <i class="fas fa-mobile"></i>                                
-                                <div class="text">QuickTicket</div>
-                            </div>
-                        </div>
+                    <div class="cards" role="list">
+                        <article class="card" role="listitem">
+                            <button type="button" class="card-button" data-modal-target="#MBmodal">
+                                <span class="card-icon" aria-hidden="true"><i class="fas fa-film"></i></span>
+                                <span class="card-text">
+                                    <span class="card-title">Entertainment Browser</span>
+                                    <span class="card-subtitle">React • TMDB API • Material UI</span>
+                                </span>
+                            </button>
+                        </article>
+                        <article class="card" role="listitem">
+                            <button type="button" class="card-button" data-modal-target="#RecipeModal">
+                                <span class="card-icon" aria-hidden="true"><i class="fas fa-utensils"></i></span>
+                                <span class="card-text">
+                                    <span class="card-title">Recipe Website</span>
+                                    <span class="card-subtitle">React • Spring Boot • MongoDB</span>
+                                </span>
+                            </button>
+                        </article>
                     </div>
                 </div>
             </div>
         </section>
+    </main>
 
-        <!-- @Contact content-->
-        <section class="contact" id="contact">
-            <div class="max-width">
-                <h2 class="title">Contact me</h2>
-                <div class="contact-content">
-                    <div class="column left">
-                        <div class="icons">
-                            <div class="row">
-                                <i class="fas fa-user"></i>
-                                <div class="info">
-                                    <div class="head">Name</div>
-                                    <div class="Sub-title">Blake Berringer</div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <div class="info">
-                                    <div class="head">Location</div>
-                                    <div class="Sub-title">Iowa City, Iowa</div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <i class="fas fa-envelope"></i>
-                                <div class="info">
-                                    <div class="head">Email</div>
-                                    <div class="Sub-title">BlakeBerringer@gmail.com</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column right">
-                        <div class="text">Message me</div>
-                        <form action="POST" data-netlify-recaptcha="true" data-netlify="true">
-                            <div class="fields">
-                                <div class="field name">
-                                    <input type="text" name="name" placeholder="Name" required>
-                                </div>
-                                <div class="field email">
-                                    <input type="email" name="email" placeholder="Email" required>
-                                </div>
-                            </div>
-                            <div class="field">
-                                <input type="text" name="subject" placeholder="Subject">
-                            </div>
-                            <div class="field textarea">
-                                <textarea name="message" cols="30" rows="10" placeholder="Message"></textarea>
-                            </div>
-                            <div class="field">
-                                <div class="reCaptcha" data-netlify-recaptcha="true"></div>
-                            </div>
-                            <div class="button">
-                                <button type="submit" name="submit">Send Message</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- @footer content-->
-
-        <footer>
-            <span>Created By Blake Berringer | <span class="far fa-copyright"></span>2020 All Rights Reserved.</span>
-        </footer>
+    <div class="modal" id="MBmodal" role="dialog" aria-modal="true" aria-labelledby="MBmodal-title" aria-hidden="true">
+        <div class="modal-header">
+            <h3 class="modal-title" id="MBmodal-title">Entertainment Browser</h3>
+            <button type="button" data-close-button class="close-button" aria-label="Close dialog">&times;</button>
+        </div>
+        <div class="modal-body">
+            <dl class="modal-summary">
+                <dt>Development Status</dt>
+                <dd>Late development</dd>
+                <dt>GitHub</dt>
+                <dd><a href="https://github.com/DevBerringer/Movie-Browser" target="_blank" rel="noopener">github.com/DevBerringer/Movie-Browser</a></dd>
+                <dt>Stack</dt>
+                <dd>React, TMDB API, Material UI</dd>
+                <dt>Project Website</dt>
+                <dd><a href="https://devberringer-movie-browser.netlify.app/" target="_blank" rel="noopener">Live demo</a></dd>
+                <dt>Project Description</dt>
+                <dd>Entertainment discovery platform featuring trending content, advanced search, and rich detail pages that surface cast, ratings, and watch providers.</dd>
+            </dl>
+        </div>
     </div>
-    <script src="script.js"></script>
-    </script>
+    <div class="modal" id="RecipeModal" role="dialog" aria-modal="true" aria-labelledby="RecipeModal-title" aria-hidden="true">
+        <div class="modal-header">
+            <h3 class="modal-title" id="RecipeModal-title">Recipe Website</h3>
+            <button type="button" data-close-button class="close-button" aria-label="Close dialog">&times;</button>
+        </div>
+        <div class="modal-body">
+            <dl class="modal-summary">
+                <dt>Development Status</dt>
+                <dd>Fully deployed and functional! Make an account and start adding your own recipes!</dd>
+                <dt>GitHub</dt>
+                <dd>Frontend: <a href="https://github.com/DevBerringer/RecipeWeb" target="_blank" rel="noopener">github.com/DevBerringer/RecipeWeb</a></dd>
+                <dd>Backend: <a href="https://github.com/DevBerringer/RecipeProvider" target="_blank" rel="noopener">github.com/DevBerringer/RecipeProvider</a></dd>
+                <dt>Stack</dt>
+                <dd>Vite, React, Tailwind CSS, Java Spring Boot, MongoDB</dd>
+                <dt>Project Website</dt>
+                <dd><a href="https://thecozycookbookwebui.vercel.app/" target="_blank" rel="noopener">Live demo</a></dd>
+                <dt>Project Description</dt>
+                <dd>Full-stack recipe management application with modern responsive UI built with Vite and React, styled with Tailwind CSS. Backend powered by Java Spring Boot REST API with MongoDB database for flexible recipe storage and retrieval.</dd>
+            </dl>
+        </div>
+    </div>
+    <div id="overlay" hidden></div>
 
+    <footer>
+        <span>Created by Blake Berringer | <span class="far fa-copyright" aria-hidden="true"></span> 2021</span>
+    </footer>
+
+    <script defer src="script.js"></script>
 </body>
 </html>
+

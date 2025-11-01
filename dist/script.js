@@ -1,120 +1,168 @@
 "use strict";
-// Navbar recolor 
-$(function () {
-  $(document).scroll(function () {
-    var $nav = $(".navbar");
-    $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+
+const body = document.body;
+const navbar = document.querySelector(".navbar");
+const navToggle = document.querySelector(".nav-toggle");
+const navMenu = document.querySelector("[data-nav-menu]");
+const navLinks = navMenu ? Array.from(navMenu.querySelectorAll("a")) : [];
+const modalTriggers = Array.from(document.querySelectorAll("[data-modal-target]"));
+const modals = Array.from(document.querySelectorAll(".modal"));
+const overlay = document.getElementById("overlay");
+
+let activeModal = null;
+let lastFocusedElement = null;
+
+/**
+ * Navigation behaviour
+ */
+const setNavState = (isOpen) => {
+  if (!navToggle || !navMenu) return;
+
+  body.classList.toggle("nav-open", isOpen);
+  navToggle.setAttribute("aria-expanded", String(isOpen));
+  navToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+};
+
+const handleNavToggle = () => {
+  const shouldOpen = !body.classList.contains("nav-open");
+  setNavState(shouldOpen);
+};
+
+if (navToggle) {
+  navToggle.addEventListener("click", handleNavToggle);
+}
+
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => setNavState(false));
+});
+
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth >= 900) {
+    setNavState(false);
+  }
+});
+
+/**
+ * Modal helpers
+ */
+const getFocusableElements = (container) => {
+  if (!container) return [];
+  const selectors = [
+    "a[href]",
+    "button:not([disabled])",
+    "textarea:not([disabled])",
+    "input:not([disabled])",
+    "select:not([disabled])",
+    '[tabindex]:not([tabindex="-1"])',
+  ];
+  return Array.from(container.querySelectorAll(selectors.join(",")));
+};
+
+const openModal = (modal) => {
+  if (!modal) return;
+
+  const alreadyOpen = document.querySelector(".modal[aria-hidden='false']");
+  if (alreadyOpen && alreadyOpen !== modal) {
+    closeModal(alreadyOpen);
+  }
+
+  lastFocusedElement = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+  modal.setAttribute("aria-hidden", "false");
+  body.classList.add("modal-open");
+  if (overlay) {
+    overlay.hidden = false;
+  }
+  activeModal = modal;
+
+  const focusable = getFocusableElements(modal);
+  if (focusable.length > 0) {
+    focusable[0].focus({ preventScroll: true });
+  }
+};
+
+const closeModal = (modal) => {
+  if (!modal) return;
+
+  modal.setAttribute("aria-hidden", "true");
+  const openModals = document.querySelectorAll(".modal[aria-hidden='false']");
+  if (openModals.length === 0) {
+    body.classList.remove("modal-open");
+    if (overlay) {
+      overlay.hidden = true;
+    }
+    activeModal = null;
+  }
+
+  if (lastFocusedElement && typeof lastFocusedElement.focus === "function") {
+    lastFocusedElement.focus({ preventScroll: true });
+    lastFocusedElement = null;
+  }
+};
+
+const trapFocus = (event, container) => {
+  const focusable = getFocusableElements(container);
+  if (focusable.length === 0) return;
+
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+
+  if (event.shiftKey && document.activeElement === first) {
+    event.preventDefault();
+    last.focus();
+  } else if (!event.shiftKey && document.activeElement === last) {
+    event.preventDefault();
+    first.focus();
+  }
+};
+
+modalTriggers.forEach((trigger) => {
+  trigger.addEventListener("click", () => {
+    const targetSelector = trigger.getAttribute("data-modal-target");
+    if (!targetSelector) return;
+    const modal = document.querySelector(targetSelector);
+    if (modal) {
+      openModal(modal);
+    }
   });
 });
 
-// hamburger var
-const NAVTOGGLE = document.querySelector('.nav-toggle');
-const NAVLINKS = document.querySelectorAll('.nav__link')
-// hamburger functionality 
-NAVTOGGLE.addEventListener('click', () => {
-  document.body.classList.toggle('nav-open');
+modals.forEach((modal) => {
+  const closeButton = modal.querySelector("[data-close-button]");
+  closeButton?.addEventListener("click", () => closeModal(modal));
 });
 
-NAVLINKS.forEach(link => {
-  link.addEventListener('click', () => {
-    document.body.classList.remove('nav-open');
-  })
-})
-
-// coding languages slider
-let slider = document.querySelector('.slider');
-let innerSlider = document.querySelector('.slider-inner');
-let pressed = false;
-let startX;
-let x;
-
-slider.addEventListener('mousedown', (e) => {
-    pressed = true;
-    startX = e.offsetX - innerSlider.offsetLeft;
-    slider.style.cursor = 'grabbing'
-    slider.style.cursor = -webkit-grab
-
+overlay?.addEventListener("click", () => {
+  const openModals = Array.from(document.querySelectorAll(".modal[aria-hidden='false']"));
+  openModals.forEach(closeModal);
 });
 
-slider.addEventListener('mouseenter', () => {
-    slider.style.cursor = 'grab'
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && activeModal) {
+    event.preventDefault();
+    closeModal(activeModal);
+  }
+
+  if (event.key === "Tab" && activeModal) {
+    trapFocus(event, activeModal);
+  }
 });
 
-slider.addEventListener('mouseup', () => {
-    slider.style.cursor = 'grab'
-});
-
-slider.addEventListener('mouseleave', () => {
-    pressed = false;
-});
-
-window.addEventListener('mouseup', () => {
-    pressed = false;
-});
-
-slider.addEventListener('mousemove', (e) => {
-    if (!pressed) return;
-    e.preventDefault();
-
-    x = e.offsetX
-
-    innerSlider.style.left = `${x - startX}px`;
-
-    checkboundary()
-});
-
-function checkboundary() {
-    let outer = slider.getBoundingClientRect();
-    let inner = innerSlider.getBoundingClientRect();
-
-    if (parseInt(innerSlider.style.left) > 0) {
-        innerSlider.style.left = '0px'
-    } else if (inner.right < outer.right) {
-        innerSlider.style.left = `-${inner.width - outer.width}px`
-    }
+// Ensure overlay starts hidden when JS loads
+if (overlay) {
+  overlay.hidden = true;
 }
 
-//cards overlay
-const openModalButtons = document.querySelectorAll('[data-modal-target]')
-const closeModalButtons = document.querySelectorAll('[data-close-button]')
-const overlay = document.getElementById('overlay')
+// Navbar recolor on scroll
+window.addEventListener("scroll", () => {
+  if (navbar) {
+    navbar.classList.toggle("scrolled", window.scrollY > navbar.offsetHeight);
+  }
+});
 
-openModalButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const modal = document.querySelector(button.dataset.modalTarget)
-    openModal(modal)
-  })
-})
-
-closeModalButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const modal = button.closest('.modal')
-    closeModal(modal)
-  })
-})
-
-overlay.addEventListener('click', () => {
-  const modals = document.querySelectorAll('.modal.active')
-  modals.forEach(modal => {
-    closeModal(modal)
-  })
-})
-
-function openModal(modal) {
-  if (modal == null) return
-  modal.classList.add('active')
-  overlay.classList.add('active')
-}
-
-function closeModal(modal) {
-  if (modal == null) return
-  modal.classList.remove('active')
-  overlay.classList.remove('active')
-}
-
-//typing animation script
-let typed = new Typed(".typing", {
-  strings:["Front-end, Back-end", "Full-stack Developer" ],
+// Typing animation script
+new Typed(".typing", {
+  strings: ["Front-end, Back-end", "Full-stack Developer"],
   typeSpeed: 100,
   backSpeed: 60,
   loop: true
